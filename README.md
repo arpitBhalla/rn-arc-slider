@@ -73,9 +73,9 @@ Arc Slider without center text
 | `trackRadius`    | number                   | `100`     | Radius of Circular Slider                               |
 | `thumbRadius`    | number                   | `12`      | Size of Thumb                                           |
 | `trackWidth`     | number                   | `5`       | Size of Track                                           |
-| `value`          | number                   | `0`       | Value between minimumValue to maximumValue              |
-| `minimumValue`   | number                   | `0`       | Minimum value                                           |
-| `maximumValue`   | number                   | `100`     | Maximum value                                           |
+| `value`          | number                   | `0`       | Value between minValue to maxValue                      |
+| `minValue`       | number                   | `0`       | Minimum value                                           |
+| `maxValue`       | number                   | `100`     | Maximum value                                           |
 | `onChange`       | ((angle: number) => any) | `none`    | onChange Handler                                        |
 | `trackColor`     | string                   | `#2089dc` | Color for Track                                         |
 | `trackTintColor` | string                   | `#e1e8ee` | Color for Track Tint                                    |

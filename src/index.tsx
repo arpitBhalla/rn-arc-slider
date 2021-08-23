@@ -9,12 +9,12 @@ export type CircularSliderProps = {
   thumbRadius?: number;
   /** Size of Track */
   trackWidth?: number;
-  /** Value between minimumValue to maximumValue */
+  /** Value between minValue to maxValue */
   value?: number;
   /** Minimum value */
-  minimumValue?: number;
+  minValue?: number;
   /** Maximum value */
-  maximumValue?: number;
+  maxValue?: number;
   /** onChange Handler */
   onChange?: (angle: number) => any;
   /** Color for Track  */
@@ -51,8 +51,8 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   trackTintColor = "#e1e8ee",
   trackColor = "#2089dc",
   value = 0,
-  minimumValue = 0,
-  maximumValue = 100,
+  minValue = 0,
+  maxValue = 100,
   minAngle = 0,
   maxAngle = 359.9,
   onChange,
@@ -67,7 +67,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
 }) => {
   const location = React.useRef({ x: 0, y: 0 });
   const viewRef = React.useRef<View>(null);
-  const valuePercentage = ((value - minimumValue) * 100) / maximumValue;
+  const valuePercentage = ((value - minValue) * 100) / maxValue;
 
   const { current: panResponder } = React.useRef(
     PanResponder.create({
