@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "description": "React Native Component for Circular Slider",
   "main": "dist/index.js",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -25,13 +29,17 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "react-native": "^0.62.0",
-    "react-native-svg": "^0.11.0"
+    "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.19",
+    "@types/node": "^16.7.1",
     "@types/react-native": "^0.64.13",
     "react": "^17.0.2",
+    "react-docgen-typescript": "^2.1.0",
     "react-native": "^0.62.0",
-    "react-native-svg": "^0.11.0"
+    "react-native-svg": "^12.1.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
   }
 }

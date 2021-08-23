@@ -3,11 +3,12 @@ import { PanResponder, PanResponderGestureState, View } from "react-native";
 import Svg, { Path, Circle, G, Text } from "react-native-svg";
 
 export type CircularSliderProps = {
+  /** Radius of Circular Slider */
   trackRadius?: number;
   thumbRadius?: number;
   trackWidth?: number;
   value?: number;
-  onChange?: (x: number) => any;
+  onChange?: (angle: number) => any;
   trackColor?: string;
   thumbColor?: string;
   trackTintColor?: string;
@@ -26,24 +27,25 @@ export type CircularSliderProps = {
 };
 
 const CircularSlider: React.FC<CircularSliderProps> = ({
+  /** prop1 description */
   thumbRadius = 12,
   trackRadius = 100,
   trackWidth = 5,
-  trackTintColor,
-  trackColor,
+  trackTintColor = "#e1e8ee",
+  trackColor = "#2089dc",
   value = 0,
   minimumValue = 0,
   maximumValue = 100,
   minAngle = 0,
   maxAngle = 359.9,
-  onChange = (x) => x,
+  onChange,
   thumbTextColor = "white",
   thumbTextSize = 10,
   noThumb = false,
   showText = false,
   showThumbText = false,
-  thumbColor,
-  textColor,
+  thumbColor = "#2089dc",
+  textColor = "#2089dc",
   textSize = 80,
 }) => {
   const location = React.useRef({ x: 0, y: 0 });
@@ -63,11 +65,11 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
           moveY - location.current.y + trackRadius + thumbRadius
         );
         if (angle <= minAngle) {
-          onChange(minAngle / 3.6);
+          onChange?.(minAngle / 3.6);
         } else if (angle >= maxAngle) {
-          onChange(maxAngle / 3.6);
+          onChange?.(maxAngle / 3.6);
         } else {
-          onChange(angle / 3.6);
+          onChange?.(angle / 3.6);
         }
       },
     })
@@ -124,7 +126,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     >
       <Svg width={width} height={width} ref={viewRef}>
         <Path
-          stroke={trackTintColor || theme?.colors?.grey5}
+          stroke={trackTintColor}
           strokeWidth={trackWidth}
           d={[
             "M",
@@ -141,7 +143,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
           ].join(" ")}
         />
         <Path
-          stroke={trackColor || theme?.colors?.primary}
+          stroke={trackColor}
           strokeWidth={trackWidth}
           fill="none"
           d={`M${startCoord.x} ${
@@ -155,7 +157,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             x={trackRadius + thumbRadius}
             y={trackRadius + 40}
             fontSize={textSize}
-            fill={textColor || trackColor || theme?.colors?.primary}
+            fill={textColor}
             textAnchor="middle"
           >
             {Math.ceil(value).toString()}
@@ -168,7 +170,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               r={thumbRadius}
               cx={thumbRadius}
               cy={thumbRadius}
-              fill={thumbColor || trackColor || theme?.colors?.primary}
+              fill={thumbColor}
               {...panResponder.panHandlers}
             />
             {showThumbText && (
@@ -176,7 +178,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                 x={thumbRadius}
                 y={thumbRadius + thumbTextSize / 2}
                 fontSize={10}
-                fill={thumbTextColor || theme?.colors?.white}
+                fill={thumbTextColor}
                 textAnchor="middle"
               >
                 {Math.ceil(value).toString().padStart(2, "0")}
@@ -188,5 +190,6 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     </View>
   );
 };
+CircularSlider.defaultProps = {};
 
 export default CircularSlider;
