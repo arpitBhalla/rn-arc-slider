@@ -1,14 +1,15 @@
 {
   "name": "rn-arc-slider",
   "version": "0.0.1",
-  "description": "React Native Component for Circular Slider",
+  "description": "Arc Slider Component for React Native using React Native Svg",
   "main": "dist/index.js",
   "files": [
     "dist/**"
   ],
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build:docs": "ts-node scripts/docs.ts",
+    "build": "npm run build:docs && tsc"
   },
   "repository": {
     "type": "git",

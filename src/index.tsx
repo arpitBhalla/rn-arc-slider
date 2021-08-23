@@ -5,24 +5,41 @@ import Svg, { Path, Circle, G, Text } from "react-native-svg";
 export type CircularSliderProps = {
   /** Radius of Circular Slider */
   trackRadius?: number;
+  /** Size of Thumb*/
   thumbRadius?: number;
+  /** Size of Track */
   trackWidth?: number;
+  /** Value between minimumValue to maximumValue */
   value?: number;
-  onChange?: (angle: number) => any;
-  trackColor?: string;
-  thumbColor?: string;
-  trackTintColor?: string;
-  thumbTextColor?: string;
-  thumbTextSize?: number;
-  noThumb?: boolean;
-  showText?: boolean;
-  showThumbText?: boolean;
-  textColor?: string;
-  textSize?: number;
+  /** Minimum value */
   minimumValue?: number;
+  /** Maximum value */
   maximumValue?: number;
-  // Angles in Degrees
+  /** onChange Handler */
+  onChange?: (angle: number) => any;
+  /** Color for Track  */
+  trackColor?: string;
+  /** Color for Track Tint  */
+  trackTintColor?: string;
+  /** Color for Thumb  */
+  thumbColor?: string;
+  /** Color for Text on Thumb  */
+  thumbTextColor?: string;
+  /** Font size for Text on Thumb  */
+  thumbTextSize?: number;
+  /** Show text on center of thumb  */
+  showThumbText?: boolean;
+  /** Show Thumb on Track  */
+  noThumb?: boolean;
+  /** Show text on center of circle  */
+  showText?: boolean;
+  /** Text color for center of circle  */
+  textColor?: string;
+  /** Text Size for center of circle  */
+  textSize?: number;
+  /** Maximum arc angle in degrees i.e. its range is 0 to 359  */
   maxAngle?: number;
+  /** Minimum arc angle in degrees i.e. its range is 0 to 359  */
   minAngle?: number;
 };
 
