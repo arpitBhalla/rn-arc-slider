@@ -1,0 +1,37 @@
+{
+  "name": "rn-arc-slider",
+  "version": "0.0.1",
+  "description": "React Native Component for Circular Slider",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arpitBhalla/rn-arc-slider.git"
+  },
+  "keywords": [
+    "react-native",
+    "slider",
+    "rn",
+    "react-native-slider"
+  ],
+  "author": "Arpit Bhalla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arpitBhalla/rn-arc-slider/issues"
+  },
+  "homepage": "https://github.com/arpitBhalla/rn-arc-slider#readme",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.62.0",
+    "react-native-svg": "^0.11.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.19",
+    "@types/react-native": "^0.64.13",
+    "react": "^17.0.2",
+    "react-native": "^0.62.0",
+    "react-native-svg": "^0.11.0"
+  }
+}
