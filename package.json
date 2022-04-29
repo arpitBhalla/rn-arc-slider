@@ -1,6 +1,6 @@
 {
   "name": "rn-arc-slider",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "prepublish": "tsc",
   "description": "React Native Component for arc slider using React Native Svg",
   "main": "dist/index.js",
